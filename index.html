@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Library</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <header class="bg-blue-600 text-white p-4 shadow-md">
+    <h1 class="text-2xl font-bold text-center">📚 Book Library</h1>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-4">
+    <div class="flex gap-2 mb-6">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for books by title, author, or keyword..."
+        class="flex-grow p-2 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        aria-label="Search for books"
+      />
+      <button
+        id="searchBtn"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+        aria-label="Search books"
+      >
+        Search
+      </button>
+    </div>
+
+    <div id="loadingIndicator" class="text-center mt-4 hidden">
+      <p class="text-blue-600 font-semibold">Loading books... 📖</p>
+    </div>
+
+    <div id="results" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <p id="noResultsMessage" class="col-span-full text-center text-gray-500 hidden">No books found. Try a different search term.</p>
+    </div>
+
+    <div id="bookDetails" class="mt-10 p-6 bg-white rounded-lg shadow-lg hidden">
+      <button id="closeDetails" class="float-right text-red-500" aria-label="Close book details">✖</button>
+      <h2 class="text-2xl font-bold mb-2" id="detailsTitle"></h2>
+      <p class="text-gray-600 mb-4" id="detailsAuthor"></p>
+      <img id="detailsCover" class="w-40 mb-4" alt="Book Cover" />
+      <p><strong>Description:</strong> <span id="detailsDescription"></span></p>
+      <p><strong>Publication Date:</strong> <span id="detailsPublishDate"></span></p>
+      <p><strong>ISBN:</strong> <span id="detailsISBN"></span></p>
+      <p><strong>Pages:</strong> <span id="detailsPages"></span></p>
+      <p><strong>Subjects:</strong> <span id="detailsSubjects"></span></p>
+    </div>
+  </main>
+
+  <footer class="bg-gray-800 text-white p-4 text-center mt-10">
+    <p class="ending">&copy; 2025 Book Library. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
